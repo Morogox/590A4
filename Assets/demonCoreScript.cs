@@ -36,7 +36,10 @@ public class DemonCoreAccident : MonoBehaviour
     public float targetBloomIntensity = 100f;
     private Bloom bloom;
 
-private void Start()
+
+    public StaticOverlay staticOverlay;
+
+    private void Start()
     {
         if (sphereTop != null)
         {
@@ -80,6 +83,9 @@ private void Start()
     {
         if (glowStarted)
             return;
+
+        if (staticOverlay != null)
+            //staticOverlay.StartStatic();
 
         glowStarted = true;
         globalVolume.profile.TryGet(out bloom);
